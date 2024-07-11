@@ -1,9 +1,10 @@
 const { Router } = require("express");
 
-const authorRouter = require("./model");
+const authorRouter = Router();
 
-const { addAuthor } = require("./controllers");
+const { addAuthor, getAuthorAndBooks } = require("./controllers");
 
 authorRouter.post("/addAuthor", addAuthor);
+authorRouter.get("/getAuthorAndBooks/:authorName", getAuthorAndBooks);
 
 module.exports = authorRouter;
